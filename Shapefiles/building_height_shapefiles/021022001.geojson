@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "021022001",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "height": 11.812154769897459, "confidence": -1.0 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -134.004389, 58.779141 ], [ -134.004378, 58.779172 ], [ -134.00442, 58.779176 ], [ -134.004431, 58.779145 ], [ -134.004389, 58.779141 ] ] ] } }
+]
+}
