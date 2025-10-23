@@ -8,11 +8,11 @@ This folder contains all the main figures and supplemental figures and tables.
 
 This folder contains all intermediate data, including summarized eBird data, building height data, and model results. The following is a description of each subfolder:
 
-**bird_richness_by_city** – XXXX
+**bird_richness_by_city** – This folder contains summarized diversity data by eBird checklist for each city in our analysis. 
 
 **building_height** – Several files that summarize the building height data and urban areas for inclusion in the study.
 
-**city_level_ebird_data** – XXXX
+**city_level_ebird_data** – This folder contains the raw eBird data for each city, before beign aggregated and summarized, into our *bird_richness_by_city* folder. 
 
 **compiled_data** – This folder contains 298 cities with eBird checklist information including species richness and summarized data within 250 meter buffer around checklists including percent land cover and mean, min, max, and standard deviation of building height. This data was used in the statistical analyses scripts.
 
