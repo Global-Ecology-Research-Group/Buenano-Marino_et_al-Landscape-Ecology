@@ -28,7 +28,7 @@ R scripts are organized into 6 sub-folders which are numbered to follow the orde
 
 **1_Getting Cities shapefiles** – These scripts are used to extract building height shapefiles for each city and prepare the data to create the study area figure. Some of these scripts cannot be run because they require large data files that cannot be pushed to the respository. However, for building height data, the user can use the `1_get_building_height_shapefiles.R` script to extract the shapefiles from the `Shapefiles/dataset-links-to-building-height-shapefile.csv` file. Additionally, we provide the filtered and summarized files that are outputted from these scripts.
 
-**2_Getting eBird data** – XXX
+**2_Getting eBird data** – This folder contains the scripts used to retrieve eBird data from SQL database, then `1_get_ebird_data_for_each_city.R` exports eBird data for all cities into the *city_level_ebird_data* folder. 
 
 **3_Land cover data** – This folder contains one script which combines the individual city files containing land cover information for each checklist, into one combined file. Due to storage limitations, we do not share the raw files or exported file, but the summarized eBird data with these variables is shared in the *compiled_data* folder.
 
