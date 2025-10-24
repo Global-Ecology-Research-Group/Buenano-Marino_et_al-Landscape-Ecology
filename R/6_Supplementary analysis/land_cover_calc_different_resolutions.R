@@ -10,7 +10,7 @@ library(ggpubr)
 # reading in the supplement fo just 20 cities
 
 # The 10m resolution data
-supp_10m <- read.csv("Intermediate data/land_cover_GEE/250m_buffer_landcover_est_supp.csv") %>%
+supp_10m <- read.csv("Intermediate_data/land_cover_GEE/250m_buffer_landcover_est_supp.csv") %>%
   rename("bare_10" = "bare",
          "flooded_vegetation_10" = "flooded_vegetation",
          "built_10" = "built",
@@ -163,6 +163,7 @@ p1 + p2 + p3 +
   p4 + p5 + p6 +
   p7 + p8
 
+ggsave("Figures_and_Tables/Figure_A2.jpeg", width = 12, height = 7, units = "in")
 
 ######## 25m to 30m ###########
 
@@ -254,6 +255,7 @@ p10 + p11 + p12 +
   p13 + p14 + p15 +
   p16 + p17
 
+ggsave("Figures_and_Tables/Figure_A3.jpeg", width = 12, height = 7, units = "in")
 
 # BARE AREAS 
 

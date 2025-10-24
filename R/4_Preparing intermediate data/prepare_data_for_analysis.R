@@ -1,5 +1,6 @@
 # this script pulls everything in for a given city and aggregates data and exports data fot that city
-
+# output files are located in city_level_ebird_data folder
+## WILL NOT RUN because shapefiles must be on local drive (to big for GitHub push)
 
 # packages
 library(tidyverse)
@@ -12,7 +13,7 @@ library(purrr)
 
 
 ## read in GEE data
-env <- readRDS("Intermediate data/land_cover_GEE/gee_land_cover_combined.RDS")
+env <- readRDS("Intermediate_data/land_cover_GEE/gee_land_cover_combined.RDS")
 
 # function to read in a city and aggregate data
 prepare_data <- function(city_name){
@@ -20,7 +21,7 @@ prepare_data <- function(city_name){
   message(paste0("Aggregating data for ", city_name))
   
  # read in eBird data
-  ebird_city <- readRDS(paste0("Intermediate data/city_level_ebird_data/", city_name, ".RDS"))
+  ebird_city <- readRDS(paste0("Intermediate_data/city_level_ebird_data/", city_name, ".RDS"))
   
   ebird_city$OBSERVATION_COUNT <- as.numeric(ebird_city$OBSERVATION_COUNT)
   ebird_city$COMMON_NAME <- as.factor(ebird_city$COMMON_NAME)
@@ -34,7 +35,7 @@ prepare_data <- function(city_name){
   
   
   # the building height data
-  b_h_sf <- read_sf(paste0("Intermediate data/city_level_geojson_building_data/", city_name, "_buildings.geojson"))
+  b_h_sf <- read_sf(paste0("Intermediate_data/city_level_geojson_building_data/", city_name, "_buildings.geojson"))
   
   # explicity setting the projection
   st_crs(ebird_locations_sf) <- 4326
@@ -107,19 +108,19 @@ prepare_data <- function(city_name){
     left_join(., building_locality_id, by = "LOCALITY_ID")
   
   
-  saveRDS(analysis_dat, paste0("Intermediate data/compiled_data/", city_name, ".RDS"))
+  saveRDS(analysis_dat, paste0("Intermediate_data/compiled_data/", city_name, ".RDS"))
   
   
   
 }
 
-city_files <- list.files(path="Intermediate data/city_level_ebird_data/",
+city_files <- list.files(path="Intermediate_data/city_level_ebird_data/",
                          pattern = "\\.RDS")
 
 city_names <- tools::file_path_sans_ext(basename(city_files))
 
 # have to do this since we only have 212 cities with data and 299 with eBird data
-building_files <- list.files(path="Intermediate data/city_level_geojson_building_data/",
+building_files <- list.files(path="Intermediate_data/city_level_geojson_building_data/",
                              pattern = "\\.geojson")
 
 modified_files <- sub("_buildings\\.geojson$", "", building_files)
