@@ -8,15 +8,15 @@ This folder contains all the main figures and supplemental figures and tables.
 
 This folder contains all intermediate data, including summarized eBird data, building height data, and model results. The following is a description of each subfolder:
 
-**bird_richness_by_city** – XXXX
+**bird_richness_by_city** – This folder contains summarized diversity data by eBird checklist for each city in our analysis. 
 
 **building_height** – Several files that summarize the building height data and urban areas for inclusion in the study.
 
-**city_level_ebird_data** – XXXX
+**city_level_ebird_data** – This folder contains the raw eBird data for each city, before being aggregated and summarized, into our *bird_richness_by_city* folder. 
 
 **compiled_data** – This folder contains 298 cities with eBird checklist information including species richness and summarized data within 250 meter buffer around checklists including percent land cover and mean, min, max, and standard deviation of building height. This data was used in the statistical analyses scripts.
 
-**ecoregion_ebird_ndvi** – Contains mean NDVI value for the 250 meter buffer around each checklist used in this study.
+**ecoregion_ebird_ndvi** – Contains mean NDVI value for the 250 meter buffer around each checklist used in this study, and the EPA ecoregion Level II shapefile. 
 
 **land_cover_GEE** – Percentage of each land cover type in the 250 meter buffer around each checklist.
 
@@ -28,11 +28,11 @@ R scripts are organized into 6 sub-folders which are numbered to follow the orde
 
 **1_Getting Cities shapefiles** – These scripts are used to extract building height shapefiles for each city and prepare the data to create the study area figure. Some of these scripts cannot be run because they require large data files that cannot be pushed to the respository. However, for building height data, the user can use the `1_get_building_height_shapefiles.R` script to extract the shapefiles from the `Shapefiles/dataset-links-to-building-height-shapefile.csv` file. Additionally, we provide the filtered and summarized files that are outputted from these scripts.
 
-**2_Getting eBird data** – XXX
+**2_Getting eBird data** – This folder contains the scripts used to retrieve eBird data from SQL database, then `1_get_ebird_data_for_each_city.R` exports eBird data for all cities into the *city_level_ebird_data* folder. All of these scripts will not run because they export or import files that are too large to be on GitHub. However, all the intermediate data summarized outputs used to create our models are in the *Intermedaite_data* folder. 
 
 **3_Land cover data** – This folder contains one script which combines the individual city files containing land cover information for each checklist, into one combined file. Due to storage limitations, we do not share the raw files or exported file, but the summarized eBird data with these variables is shared in the *compiled_data* folder.
 
-**4_Preparing intermediate data** – XXX
+**4_Preparing intermediate data** – There is only one script in this folder that pulls toghther all of the eBird data, land cover data from GEE, and building height data into a single .RDS file for each city. This script will not run because it requires the shapefiles for each city which are to large for upload to GitHub. However, all of the outputs are in the *compiled_data* folder. 
 
 **4_Statistical anlysis** – This folder contains two scripts, `Statistical_model_obj_1.R` and `Statistical_model_obj_2.R`. These scripts contain all the code used to conduct the statistical analyses for objective 1 and 2 in the paper.
 
