@@ -12,11 +12,11 @@ This folder contains all intermediate data, including summarized eBird data, bui
 
 **building_height** – Several files that summarize the building height data and urban areas for inclusion in the study.
 
-**city_level_ebird_data** – This folder contains the raw eBird data for each city, before beign aggregated and summarized, into our *bird_richness_by_city* folder. 
+**city_level_ebird_data** – This folder contains the raw eBird data for each city, before being aggregated and summarized, into our *bird_richness_by_city* folder. 
 
 **compiled_data** – This folder contains 298 cities with eBird checklist information including species richness and summarized data within 250 meter buffer around checklists including percent land cover and mean, min, max, and standard deviation of building height. This data was used in the statistical analyses scripts.
 
-**ecoregion_ebird_ndvi** – Contains mean NDVI value for the 250 meter buffer around each checklist used in this study.
+**ecoregion_ebird_ndvi** – Contains mean NDVI value for the 250 meter buffer around each checklist used in this study, and the EPA ecoregion Level II shapefile. 
 
 **land_cover_GEE** – Percentage of each land cover type in the 250 meter buffer around each checklist.
 
@@ -32,7 +32,7 @@ R scripts are organized into 6 sub-folders which are numbered to follow the orde
 
 **3_Land cover data** – This folder contains one script which combines the individual city files containing land cover information for each checklist, into one combined file. Due to storage limitations, we do not share the raw files or exported file, but the summarized eBird data with these variables is shared in the *compiled_data* folder.
 
-**4_Preparing intermediate data** – XXX
+**4_Preparing intermediate data** – There is only one script in this folder that pulls toghther all of the eBird data, land cover data from GEE, and building height data into a single .RDS file for each city. This script will not run because it requires the shapefiles for each city which are to large for upload to GitHub. However, all of the outputs are in the *compiled_data* folder. 
 
 **4_Statistical anlysis** – This folder contains two scripts, `Statistical_model_obj_1.R` and `Statistical_model_obj_2.R`. These scripts contain all the code used to conduct the statistical analyses for objective 1 and 2 in the paper.
 
